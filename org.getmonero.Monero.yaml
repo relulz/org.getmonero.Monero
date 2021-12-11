@@ -120,6 +120,7 @@ modules:
     buildsystem: cmake
     config-opts:
       - -DCMAKE_BUILD_TYPE=Release
+      - -DARCH=x86-64
     build-options:
       arch:
         aarch64:
