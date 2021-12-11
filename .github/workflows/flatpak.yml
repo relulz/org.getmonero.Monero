@@ -16,5 +16,5 @@ jobs:
     - uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v4
       with:
         bundle: org.getmonero.Monero.flatpak
-        manifest-path: org.getmonero.Monero.yml
+        manifest-path: org.getmonero.Monero.yaml
         cache-key: flatpak-builder-${{ github.sha }}
