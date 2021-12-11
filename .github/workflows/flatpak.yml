@@ -1,0 +1,20 @@
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+name: "Flatpak"
+jobs:
+  flatpak:
+    name: "Flatpak"
+    runs-on: ubuntu-latest
+    container:
+      image: bilelmoussaoui/flatpak-github-actions:kde-5.15-21.08
+      options: --privileged
+    steps:
+    - uses: actions/checkout@v2
+    - uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v4
+      with:
+        bundle: org.getmonero.Monero.flatpak
+        manifest-path: org.getmonero.Monero.yml
+        cache-key: flatpak-builder-${{ github.sha }}
